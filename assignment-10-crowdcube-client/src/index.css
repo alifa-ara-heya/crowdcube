@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+/* :root {
+  --color-default: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-default: #000000;
+  }
+}
+[data-theme="dark"] {
+  --color-default: #252b30;
+}
+[data-theme="black"] {
+  --color-default: #000000;
+} */

@@ -3,7 +3,7 @@ import logo from '../assets/logo.png'
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Tooltip as ReactTooltip } from "react-tooltip";
-import ToggleTheme from "./toggleTheme";
+// import ToggleTheme from "./toggleTheme";
 
 
 const Navbar = () => {
@@ -56,14 +56,14 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="navbar-center hidden xl:flex text-white">
-                <ul className="menu menu-horizontal !important px-1 gap-8 text-base">
+                <ul className="menu menu-horizontal !important px-1 gap-8 ">
                     {links}
                 </ul>
             </div>
             <div className="navbar-end gap-4 items-center">
-                <div className="hidden md:block">
+                {/* <div className="hidden md:block">
                     <ToggleTheme />
-                </div>
+                </div> */}
                 {
                     user?.email ? (
                         <>

@@ -16,7 +16,7 @@ const RunningCampaigns = ({ campaigns }) => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {
-                    campaigns.slice(0, 8).map(campaign => <CampaignCard key={campaign._id} campaign={campaign}></CampaignCard>)
+                    campaigns.slice(0, 4).map(campaign => <CampaignCard key={campaign._id} campaign={campaign}></CampaignCard>)
                 }
             </div>
             <div className='text-center'>

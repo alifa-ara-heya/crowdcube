@@ -16,7 +16,7 @@ const Home = () => {
     return (
         <div className="w-11/12 mx-auto max-w-[1440px]">
 
-            <div className="md:hidden">
+            <div className="">
                 <ToggleTheme />
             </div>
 

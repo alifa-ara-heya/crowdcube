@@ -3,6 +3,7 @@ import logo from '../assets/logo.png'
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import ToggleTheme from "./toggleTheme";
 
 
 const Navbar = () => {
@@ -15,14 +16,18 @@ const Navbar = () => {
     const links = <>
         <li><NavLink className={getNavLinkActiveClass} to='/'>Home</NavLink></li>
         <li><NavLink className={getNavLinkActiveClass} to='/all-campaigns'>All Campaigns</NavLink></li>
-        <li><NavLink className={getNavLinkActiveClass} to='/add-new-campaign'>Add New Campaign</NavLink></li>
-        <li><NavLink className={getNavLinkActiveClass} to='/my-campaign'>My Campaigns</NavLink></li>
-        <li><NavLink className={getNavLinkActiveClass} to='/my-donations'>My Donations</NavLink></li>
+        <li><NavLink className={getNavLinkActiveClass} to='/about-us'>About Us</NavLink></li>
+        <li><NavLink className={getNavLinkActiveClass} to='/contact'>Contact Us</NavLink></li>
+        {user && <>
+            <li><NavLink className={getNavLinkActiveClass} to='/add-new-campaign'>Add New Campaign</NavLink></li>
+            <li><NavLink className={getNavLinkActiveClass} to='/my-campaign'>My Campaigns</NavLink></li>
+            <li><NavLink className={getNavLinkActiveClass} to='/my-donations'>My Donations</NavLink></li>
+        </>}
         {/* <li><NavLink className={getNavLinkActiveClass} to='/register'>Register</NavLink></li> */}
     </>
 
     return (
-        <div className="navbar bg-base-100 max-w-[1440px] mx-auto">
+        <div className="navbar bg-secondary/60 top-0 sticky z-50  mx-auto backdrop-blur-md">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,16 +51,19 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to='/' className="flex justify-center items-center pr-5 hover:cursor-pointer">
-                    <img src={logo} alt="" className="w-20" />
-                    <h2 className="text-2xl font-bold text-blue-900 -ml-3">Crowdcube</h2>
+                    <img src={logo} alt="" className="w-20 hidden md:block" />
+                    <h2 className="md:text-2xl text-xl text-white font-bold  -ml-3">Crowdcube</h2>
                 </Link>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal !important px-1 gap-8">
+            <div className="navbar-center hidden lg:flex text-white">
+                <ul className="menu menu-horizontal !important px-1 gap-8 text-base">
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end gap-4">
+            <div className="navbar-end gap-4 items-center">
+                <div className="hidden md:block">
+                    <ToggleTheme />
+                </div>
                 {
                     user?.email ? (
                         <>
@@ -65,7 +73,7 @@ const Navbar = () => {
                             <button className="btn text-white bg-gradient-to-r from-primary to-tertiary" onClick={signOutUser}>LogOut</button>
                         </>
                     ) : (
-                        <div className="flex justify-center items-center">
+                        <div className="flex justify-center items-center gap-2">
                             <Link to='/sign-in' className="btn bg-gradient-to-r from-amber-600 to-yellow-500 text-white">Login</Link>
                             <Link to='/register' className="btn bg-gradient-to-r from-primary to-fourth text-white">Registration</Link>
                         </div>

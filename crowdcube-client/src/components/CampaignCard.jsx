@@ -14,7 +14,7 @@ const CampaignCard = ({ campaign }) => {
                 <img
                     src={photo}
                     alt={title}
-                    className="rounded-xl w-full h-[300px] object-cover" />
+                    className="rounded-xl w-full md:h-[150px] lg:h-[200px] object-cover" />
             </figure>
             <div className="card-body">
 
@@ -25,7 +25,9 @@ const CampaignCard = ({ campaign }) => {
                     <p className="text-sm font-medium text-gray-400">Deadline: {deadline}</p>
                 </div>
 
-                <p className="">{description.split('.')[0]}...</p>
+                {/* <p className="">{description.split('.')[0]}...</p> */}
+                <p className="">{description.slice(0, 80)}...</p>
+
                 <div className="card-actions">
                     <Link to={`/details/${_id}`}><button className="btn bg-gradient-to-r from-primary to-tertiary hover:scale-90 transition duration-300 ease-in-out text-white">See More <FaArrowRight />
                     </button></Link>

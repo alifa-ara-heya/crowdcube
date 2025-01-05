@@ -14,9 +14,9 @@ const RunningCampaigns = ({ campaigns }) => {
 
             {/* <h3 className='text-center text-gray-400 text-xl'>Running Campaigns: {campaigns?.length} </h3> */}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {
-                    campaigns.slice(0, 6).map(campaign => <CampaignCard key={campaign._id} campaign={campaign}></CampaignCard>)
+                    campaigns.slice(0, 8).map(campaign => <CampaignCard key={campaign._id} campaign={campaign}></CampaignCard>)
                 }
             </div>
             <div className='text-center my-6'>

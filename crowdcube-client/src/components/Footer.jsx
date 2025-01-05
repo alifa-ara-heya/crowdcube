@@ -11,7 +11,8 @@ const Footer = () => {
                 <nav className="grid grid-flow-col gap-4">
                     <Link to='/' className="link link-hover">Home</Link>
                     <Link to='/all-campaigns' className="link link-hover">All campaigns</Link>
-                    <Link to='/add-new-campaign' className="link link-hover">Add New Campaign</Link>
+                    <Link to='/about-us' className="link link-hover">About Us</Link>
+
                     <Link to='/register' className="link link-hover">Register</Link>
                 </nav>
                 <nav>

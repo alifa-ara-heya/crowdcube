@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 // import CampaignCard from "../components/CampaignCard";
 import Banner from "../components/Banner";
-import AboutUs from "../components/AboutUS";
+
 import RunningCampaigns from "../components/RunningCampaigns";
 import JoinUs from "../components/JoinUs";
 import ToggleTheme from "../components/toggleTheme";
@@ -14,10 +14,14 @@ const Home = () => {
     return (
         <div className="w-11/12 mx-auto max-w-[1440px]">
 
-            <ToggleTheme />
-            <Banner />
+            <div className="md:hidden">
+                <ToggleTheme />
+            </div>
+            <div className="max-w-[1550px]">
+                <Banner />
+            </div>
 
-            <AboutUs />
+
 
             <JoinUs />
 

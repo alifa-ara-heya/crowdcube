@@ -11,6 +11,8 @@ import SignIn from "../Pages/SignIn";
 import PrivateRoute from "./PrivateRoute";
 import CampaignDetails from "../Pages/CampaignDetails";
 import UpdateCampaign from "../Pages/UpdateCampaign";
+import AboutUs from "../components/AboutUS";
+import ContactUs from "../components/ContactUs";
 
 
 const Router = createBrowserRouter(
@@ -32,10 +34,17 @@ const Router = createBrowserRouter(
                     loader: () => fetch('https://assignment-10-crowdcube-server.vercel.app/campaigns')
                 },
                 {
+                    path: 'about-us',
+                    element: <AboutUs />
+                },
+                {
+                    path: 'contact',
+                    element: <ContactUs />
+                },
+
+                {
                     path: 'details/:id',
-                    element: <PrivateRoute>
-                        <CampaignDetails />
-                    </PrivateRoute>,
+                    element: <CampaignDetails />,
                     loader: async ({ params }) => {
                         const res = await fetch('https://assignment-10-crowdcube-server.vercel.app/campaigns')
                         const data = await res.json()

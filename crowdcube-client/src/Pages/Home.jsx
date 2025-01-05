@@ -5,6 +5,8 @@ import Banner from "../components/Banner";
 import RunningCampaigns from "../components/RunningCampaigns";
 import JoinUs from "../components/JoinUs";
 import ToggleTheme from "../components/toggleTheme";
+import Newsletter from "../components/Newsletter";
+import Accordion from "../components/Accordion";
 
 
 const Home = () => {
@@ -17,9 +19,9 @@ const Home = () => {
             <div className="md:hidden">
                 <ToggleTheme />
             </div>
-            <div className="max-w-[1550px]">
-                <Banner />
-            </div>
+
+            <Banner />
+
 
 
 
@@ -27,9 +29,9 @@ const Home = () => {
 
             {/* running campaigns */}
             <RunningCampaigns campaigns={campaigns} />
+            <Accordion />
 
-
-
+            <Newsletter />
 
         </div>
     );

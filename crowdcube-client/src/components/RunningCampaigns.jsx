@@ -19,9 +19,9 @@ const RunningCampaigns = ({ campaigns }) => {
                     campaigns.slice(0, 8).map(campaign => <CampaignCard key={campaign._id} campaign={campaign}></CampaignCard>)
                 }
             </div>
-            <div className='text-center my-6'>
+            <div className='text-center'>
                 <Link to='all-campaigns'>
-                    <button className='px-4 py-4 my-10 bg-gradient-to-r from-amber-600 to-yellow-500 text-white rounded-lg hover:scale-90 transition duration-300 ease-in-out font-medium'>
+                    <button className='px-4 py-4 mt-10 bg-gradient-to-r from-amber-600 to-yellow-500 text-white rounded-lg hover:scale-90 transition duration-300 ease-in-out font-medium'>
                         <p className=''>Total Campaigns: {campaigns?.length}</p>
                         <div className='flex items-center gap-4'>
                             <p>View All</p>

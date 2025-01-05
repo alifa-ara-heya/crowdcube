@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="navbar bg-secondary/60 top-0 sticky z-50  mx-auto backdrop-blur-md">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div tabIndex={0} role="button" className="btn btn-ghost xl:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -55,7 +55,7 @@ const Navbar = () => {
                     <h2 className="md:text-2xl text-xl text-white font-bold  -ml-3">Crowdcube</h2>
                 </Link>
             </div>
-            <div className="navbar-center hidden lg:flex text-white">
+            <div className="navbar-center hidden xl:flex text-white">
                 <ul className="menu menu-horizontal !important px-1 gap-8 text-base">
                     {links}
                 </ul>
